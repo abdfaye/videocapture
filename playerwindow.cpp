@@ -130,7 +130,7 @@ void PlayerWindow::openMedia()
     m_player->setOptionsForFormat(opt4);
 
 
-    m_player->setFrameRate(120);
+    m_player->setFrameRate(10000.0);
     m_player->setBufferValue(1);
 //    m_player->setNotifyInterval(1);
     m_player->play("rtsp://admin:123456@192.168.1.200:554/mpeg4");
@@ -161,15 +161,12 @@ void PlayerWindow::capture()
 }
 
 void PlayerWindow::startRecord(){
-//    recorder->moveToThread(&transcoderThread);
-//    transcoderThread.start();
+
     recorder->start();
 }
 
 void PlayerWindow::stopRecord(){
     recorder->stop();
-//    transcoderThread.quit();
-//    transcoderThread.wait();
 }
 
 void PlayerWindow::onCaptureSaved(const QString &path)
