@@ -96,12 +96,12 @@ PlayerWindow::PlayerWindow(QWidget *parent) : QWidget(parent)
     recorder->videoEncoder()->setBitRate(1920*1080);
     recorder->videoEncoder()->setHeight(1080);
     recorder->videoEncoder()->setWidth(1920);
-    QStringList liste = recorder->videoEncoder()->supportedCodecs();
-    if (liste.isEmpty()){
-            qDebug() << "Y a un probleme la WALABOOK----------------------------------------------------";
+    QStringList list = recorder->videoEncoder()->supportedCodecs();
+    if (list.isEmpty()){
+            qDebug() << "list empty----------------------------------------------------";
     }
     else{
-             qDebug() << liste;
+             qDebug() << list;
     }
     recorder->setOutputMedia(path);
 
